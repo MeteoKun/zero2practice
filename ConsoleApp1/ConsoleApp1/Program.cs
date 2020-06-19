@@ -6,29 +6,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            IAnimal myAnimal;
 
-            Console.WriteLine("What animal are you?");
-            string input = Console.ReadLine();
+            Dog myDog = new Dog();
+            myDog.Name = "Bob";
+            myDog.NumberOfLegs = 4;
+            myDog.Bark();
 
-            if(input == "Dog")
-            {
-                myAnimal = new Dog();
-            }
-            else
-            {
-                myAnimal = new Animal();
-            }
-            //Animal myAnimal = new Animal();
-            myAnimal.Name = "Jessica";
-            //myAnimal.Color = "Purple";
-            myAnimal.Breathe();
-         
+            Lab myLab = new Lab();
+            myLab.Bark();
+            myLab.Name = "Lassie";
+            Console.WriteLine(myDog.Name);
+
         }
     }
 
-    class Animal : IAnimal
+    class Animal
     {
+
         public string Name { get; set; }
         public string Color { get; set; }
 
@@ -36,26 +30,27 @@ namespace ConsoleApp1
         {
             Console.WriteLine("I'm breathing");
         }
-    }
 
-    class Dog : IAnimal
-    {
-        public string Name { get; set; }
-
-        public void Breathe()
+        public void Eat()
         {
-            Console.WriteLine("I'm a breathing dog");
+
         }
     }
 
-    interface IAnimal
+    class Dog : Animal
     {
-        string Name { get; set; }
-
-        void Breathe();
-
+        public int NumberOfLegs { get; set; }
+        public void Bark()
+        {
+            Console.WriteLine("Woof woof!");
+            //Console.WriteLine(NumberOfLegs);
+        }
     }
 
+    class Lab : Dog
+    {
+
+    }
 }
 
 
