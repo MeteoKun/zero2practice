@@ -6,40 +6,26 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Car myCar = new Car();
-            myCar.Color = "Blue";
 
-            Car myCar2 = new Car();
-            myCar2.Color = "Red";
+            Animal myAnimal = new Animal("Bob");
 
-            Console.WriteLine(myCar.Color);
-            Console.WriteLine(myCar2.Color);
-
-            //Math myMath = new Math();
-            int total = Math.Add(5, 3);
-
-            Console.WriteLine(total);
-
-            //Math myMath2 = new Math();
-            int total2 = Math.Add(6, 12);
-
-            Console.WriteLine(total2);
-
-
+            Console.WriteLine(myAnimal.Name);
 
         }
     }
 
-    class Car
+    class Animal
     {
-        public string Color { get; set; }
-    }
+        public string Name { get; private set; }
 
-    class Math
-    {
-        public static int Add(int a, int b)
+        public Animal(string name)
         {
-            return a + b;
+            Name = name;
+        }
+
+        public void SetAnimalName(string name)
+        {
+            Name = name;
         }
     }
 
