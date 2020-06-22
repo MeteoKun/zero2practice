@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1;
 using System;
+using System.Dynamic;
 
 namespace ConsoleApp1
 {
@@ -7,31 +8,38 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Math.Add(7,14, 10));
+            Dog myDog = new Dog();
+            Fish myFish = new Fish();
 
-            Console.WriteLine("Hello");
+            myDog.Breathe();
+            myFish.Breathe();
+
 
         }
     }
 
-    static class Math
+    abstract class Animal
+    {
+        public string Name { get; set; }
+
+        public virtual void Breathe()
+        {
+            Console.WriteLine("I'm breathing air");
+        }
+    }
+
+    class Dog : Animal
     {
 
-        public static int Add(int a, int b)
-        {
-            return a + b;
-        }
-        public static int Add(int a, int b, int c)
-        {
-            return a + b + c;
-        }
-
-        public static int Add(int a, int b, string c)
-        {
-            return a;
-        }
     }
 
+    class Fish : Animal
+    {
+        public override void Breathe()
+        {
+            Console.WriteLine("I'm breathing under water");
+        }
+    }
 }
 
 
