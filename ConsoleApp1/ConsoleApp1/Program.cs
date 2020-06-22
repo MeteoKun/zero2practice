@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1;
+using System;
 
 namespace ConsoleApp1
 {
@@ -6,51 +7,31 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(Math.Add(7,14, 10));
 
-            Dog myDog = new Dog();
-            myDog.Name = "Bob";
-            myDog.NumberOfLegs = 4;
-            myDog.Bark();
-
-            Lab myLab = new Lab();
-            myLab.Bark();
-            myLab.Name = "Lassie";
-            Console.WriteLine(myDog.Name);
+            Console.WriteLine("Hello");
 
         }
     }
 
-    class Animal
+    static class Math
     {
 
-        public string Name { get; set; }
-        public string Color { get; set; }
-
-        public void Breathe()
+        public static int Add(int a, int b)
         {
-            Console.WriteLine("I'm breathing");
+            return a + b;
+        }
+        public static int Add(int a, int b, int c)
+        {
+            return a + b + c;
         }
 
-        public void Eat()
+        public static int Add(int a, int b, string c)
         {
-
-        }
-    }
-
-    class Dog : Animal
-    {
-        public int NumberOfLegs { get; set; }
-        public void Bark()
-        {
-            Console.WriteLine("Woof woof!");
-            //Console.WriteLine(NumberOfLegs);
+            return a;
         }
     }
 
-    class Lab : Dog
-    {
-
-    }
 }
 
 
